@@ -1,8 +1,8 @@
 import "../date/DateStyles.css";
 import React from "react";
 
-function Date() {
+const Date = () => {
   return <div>Date</div>;
-}
+};
 
 export default Date;

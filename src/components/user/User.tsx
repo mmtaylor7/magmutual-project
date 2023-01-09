@@ -1,8 +1,8 @@
 import "../user/UserStyles.css";
 import React from "react";
 
-function User() {
+const User = () => {
   return <div>User</div>;
-}
+};
 
 export default User;

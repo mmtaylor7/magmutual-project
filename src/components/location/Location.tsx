@@ -1,8 +1,8 @@
 import "../location/LocationStyles.css";
 import React from "react";
 
-function Location() {
+const Location = () => {
   return <div>Location</div>;
-}
+};
 
 export default Location;
