@@ -1,8 +1,12 @@
-import "../Header/Header.css";
+import "../header/HeaderStyles.css";
 import React from "react";
 
 function Header() {
-  return <div>Search Engine</div>;
+  return (
+    <div>
+      <div>Header</div>
+    </div>
+  );
 }
 
 export default Header;
