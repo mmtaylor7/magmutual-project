@@ -10,8 +10,6 @@ import Profession from "./components/profession/Profession";
 import Location from "./components/location/Location";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState();
-
   return (
     <div className="App">
       <Header />
