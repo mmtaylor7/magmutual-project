@@ -1,4 +1,4 @@
-import "../profession/ProfessionStyles.css";
+import "./ProfessionStyles.css";
 import React from "react";
 
 const Profession = () => {

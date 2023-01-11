@@ -1,0 +1,25 @@
+.card {
+  width: 30vw;
+  text-align: center;
+
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  border-radius: 25px;
+  padding-left: 18px;
+}
+
+.userProfile {
+  font-size: 30px !important;
+  font-family: "Sofia Sans", sans-serif !important;
+}
+
+.cardContents {
+  text-align: left;
+}
+
+.cardContentsFont {
+  font-size: 20px !important;
+  /* font-weight: bold !important; */
+  font-family: "Sofia Sans", sans-serif !important;
+}
