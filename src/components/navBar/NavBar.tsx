@@ -6,26 +6,28 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { useNavigate } from "react-router-dom";
 
 type NavBarProps = {};
 
 const NavBar = (props: NavBarProps) => {
+  const navigate = useNavigate();
   const onRadioButtonClick = (
     event: React.ChangeEvent<HTMLInputElement>,
     value: string
   ) => {
     switch (value) {
       case "byUser":
-        console.log("search by user");
+        navigate("/byUser");
         break;
       case "byDate":
-        console.log("search by date");
+        navigate("/byDate");
         break;
       case "byLocation":
-        console.log("search by location");
+        navigate("/byLocation");
         break;
       case "byProfession":
-        console.log("search by profession");
+        navigate("/byProfession");
         break;
       default:
         console.log(`Sorry`);
