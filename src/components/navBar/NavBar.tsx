@@ -45,29 +45,17 @@ const NavBar = (props: NavBarProps) => {
         name="row-radio-buttons-group"
         onChange={onRadioButtonClick}
       >
-        <FormControlLabel
-          value="byUser"
-          control={<Radio />}
-          label="User"
-          className="radioFont"
-        />
-        <FormControlLabel
-          value="byDate"
-          control={<Radio />}
-          label="Date"
-          className="radioFont"
-        />
+        <FormControlLabel value="byUser" control={<Radio />} label="User" />
+        <FormControlLabel value="byDate" control={<Radio />} label="Date" />
         <FormControlLabel
           value="byProfession"
           control={<Radio />}
           label="Profession"
-          className="radioFont"
         />
         <FormControlLabel
           value="byLocation"
           control={<Radio />}
           label="Location"
-          className="radioFont"
         />
       </RadioGroup>
     </FormControl>
