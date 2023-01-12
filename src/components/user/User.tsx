@@ -6,6 +6,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 const User = () => {
+  const searchByLastName = async () => {
+    const response = await fetch(
+      "https://magmutual-project.herokuapp.com/getByLastName/Roarke"
+    );
+    const user = await response.json();
+  };
   return (
     <Stack
       direction="row"
@@ -44,6 +50,7 @@ const User = () => {
           fontSize: "20px",
           marginTop: "10px",
         }}
+        onClick={searchByLastName}
       >
         Search
       </Button>
