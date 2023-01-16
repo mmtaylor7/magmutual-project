@@ -5,13 +5,25 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const User = () => {
+type UserProps = {
+  setUsers: any;
+};
+
+const User = (props: UserProps) => {
+  let lastName = "";
+
   const searchByLastName = async () => {
     const response = await fetch(
-      "https://magmutual-project.herokuapp.com/getByLastName/Roarke"
+      "https://magmutual-project.herokuapp.com/getByLastName/" + lastName
     );
-    const user = await response.json();
+    const users = await response.json();
+    props.setUsers(users);
   };
+
+  const onTextFieldChange = (event: any) => {
+    lastName = event.target.value;
+  };
+
   return (
     <Stack
       direction="row"
@@ -36,6 +48,7 @@ const User = () => {
           id="filled-basic"
           label="Search by Last Name"
           variant="filled"
+          onChange={onTextFieldChange}
           style={{ backgroundColor: "white" }}
         />
       </Box>

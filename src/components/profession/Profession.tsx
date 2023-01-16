@@ -5,7 +5,25 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Profession = () => {
+type ProfessionProps = {
+  setUsers: any;
+};
+
+const Profession = (props: ProfessionProps) => {
+  let profession = "";
+
+  const searchByProfession = async () => {
+    const response = await fetch(
+      "https://magmutual-project.herokuapp.com/getByProfession/" + profession
+    );
+    const users = await response.json();
+    props.setUsers(users);
+  };
+
+  const onTextFieldChange = (event: any) => {
+    profession = event.target.value;
+  };
+
   return (
     <Stack
       direction="row"
@@ -30,6 +48,7 @@ const Profession = () => {
           id="filled-basic"
           label="Search by Profession"
           variant="filled"
+          onChange={onTextFieldChange}
           style={{ backgroundColor: "white" }}
         />
       </Box>
@@ -44,6 +63,7 @@ const Profession = () => {
           fontSize: "20px",
           marginTop: "10px",
         }}
+        onClick={searchByProfession}
       >
         Search
       </Button>
