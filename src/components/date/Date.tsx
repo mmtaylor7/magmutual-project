@@ -1,5 +1,5 @@
 import "../date/DateStyles.css";
-import React from "react";
+import React, { useState } from "react";
 import { Dayjs } from "dayjs";
 import TextField from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -9,7 +9,8 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 const Date = () => {
-  const [value, setValue] = React.useState<Dayjs | null>(null);
+  const [startValue, setStartValue] = useState<Dayjs | null>(null);
+  const [endValue, setEndValue] = useState<Dayjs | null>(null);
 
   return (
     <Stack
@@ -26,9 +27,9 @@ const Date = () => {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
           label="Start Date"
-          value={value}
+          value={startValue}
           onChange={(newValue) => {
-            setValue(newValue);
+            setStartValue(newValue);
           }}
           renderInput={(params) => (
             <TextField {...params} style={{ backgroundColor: "white" }} />
@@ -36,9 +37,9 @@ const Date = () => {
         />
         <DatePicker
           label="End Date"
-          value={value}
+          value={endValue}
           onChange={(newValue) => {
-            setValue(newValue);
+            setEndValue(newValue);
           }}
           renderInput={(params) => (
             <TextField {...params} style={{ backgroundColor: "white" }} />

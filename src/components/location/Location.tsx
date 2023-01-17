@@ -1,5 +1,4 @@
 import "../location/LocationStyles.css";
-import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -7,6 +6,16 @@ import TextField from "@mui/material/TextField";
 
 type LocationProps = {
   setUsers: any;
+};
+
+type EmployerUser = {
+  jobsTheyMade: Array<Job>;
+  id: string;
+};
+
+type Job = {
+  name: string;
+  salary: number;
 };
 
 const Location = (props: LocationProps) => {

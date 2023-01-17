@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200;400&display=swap");
+
 .searchBy {
   font-size: 40px !important;
   color: black !important;
+  font-family: "Sofia Sans", sans-serif !important;
 }

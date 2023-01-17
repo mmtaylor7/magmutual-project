@@ -39,6 +39,13 @@ function App() {
         {users.map((user: any) => {
           return <UserProfile user={user} />;
         })}
+        {/* if (users){
+          {users.map((user: any) => {
+            return <UserProfile user={user} />;
+          })}
+        } else {
+          return <div>User does not exist! Please try again. </div>
+        } */}
       </div>
     </div>
   );
