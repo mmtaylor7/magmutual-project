@@ -12,6 +12,15 @@ import UserProfile from "./components/userProfile/UserProfile";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const returnUserTsx = () => {
+    if (users.length > 0) {
+      return users.map((user: any) => {
+        return <UserProfile user={user} />;
+      });
+    } else {
+      return <div className="noResults">No results. Please try again. </div>;
+    }
+  };
 
   return (
     <div className="App">
@@ -33,18 +42,7 @@ function App() {
           />
         </Routes>
       </div>
-      <div className="cardCenter">
-        {users.map((user: any) => {
-          return <UserProfile user={user} />;
-        })}
-        {/* if (users){
-          {users.map((user: any) => {
-            return <UserProfile user={user} />;
-          })}
-        } else {
-          return <div>User does not exist! Please try again. </div>
-        } */}
-      </div>
+      <div className="cardCenter">{returnUserTsx()}</div>
     </div>
   );
 }
