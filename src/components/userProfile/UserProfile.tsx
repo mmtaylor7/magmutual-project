@@ -14,27 +14,40 @@ const UserProfile = (props: UserProfileProps) => {
       <Typography className="userProfile">User Profile </Typography>
       <CardContent className="cardContents">
         {/* {props.project.projectTitle} */}
-        <Typography className="cardContentsFont">
-          First Name: {props.user.firstname}
-        </Typography>
-        <Typography className="cardContentsFont">
-          Last Name: {props.user.lastname}{" "}
-        </Typography>
-        <Typography className="cardContentsFont">
-          Email: {props.user.email}
-        </Typography>
-        <Typography className="cardContentsFont">
-          Profession: {props.user.profession}{" "}
-        </Typography>
-        <Typography className="cardContentsFont">
-          Date Created: {props.user.dateCreated}
-        </Typography>
-        <Typography className="cardContentsFont">
-          Country: {props.user.country}{" "}
-        </Typography>
-        <Typography className="cardContentsFont">
-          City: {props.user.city}
-        </Typography>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">
+            First Name:&nbsp;&nbsp;
+          </Typography>{" "}
+          {props.user.firstname}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">Last Name:&nbsp;&nbsp;</Typography>{" "}
+          {props.user.lastname}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">Email:&nbsp;&nbsp;</Typography>{" "}
+          {props.user.email}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">
+            Profession:&nbsp;&nbsp;
+          </Typography>{" "}
+          {props.user.profession}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">
+            Date Created:&nbsp;&nbsp;
+          </Typography>{" "}
+          {props.user.dateCreated}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">Country:&nbsp;&nbsp;</Typography>{" "}
+          {props.user.country}
+        </div>
+        <div className="cardContentsFont">
+          <Typography className="boldedText">City:&nbsp;&nbsp;</Typography>{" "}
+          {props.user.city}
+        </div>
       </CardContent>
     </Card>
   );

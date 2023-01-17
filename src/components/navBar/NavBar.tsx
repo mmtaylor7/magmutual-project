@@ -7,6 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { useNavigate } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 type NavBarProps = {};
 
@@ -45,17 +46,25 @@ const NavBar = (props: NavBarProps) => {
         name="row-radio-buttons-group"
         onChange={onRadioButtonClick}
       >
-        <FormControlLabel value="byUser" control={<Radio />} label="User" />
-        <FormControlLabel value="byDate" control={<Radio />} label="Date" />
+        <FormControlLabel
+          value="byUser"
+          control={<Radio />}
+          label={<Typography fontSize="30px">User</Typography>}
+        />
+        <FormControlLabel
+          value="byDate"
+          control={<Radio />}
+          label={<Typography fontSize="30px">Date</Typography>}
+        />
         <FormControlLabel
           value="byProfession"
           control={<Radio />}
-          label="Profession"
+          label={<Typography fontSize="30px">Profession</Typography>}
         />
         <FormControlLabel
           value="byLocation"
           control={<Radio />}
-          label="Location"
+          label={<Typography fontSize="30px">Location</Typography>}
         />
       </RadioGroup>
     </FormControl>

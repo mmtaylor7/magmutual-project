@@ -4,13 +4,19 @@
 
 .App {
   text-align: center;
-  background-color: #df99f0ce;
+  /* background-color: #df99f0ce; */
+  background-color: rgb(170, 213, 216);
+
   align-items: center;
   justify-content: center;
 }
 
 .cardCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+
+  /* align-items: center;
+  justify-content: center; */
 }

@@ -5,7 +5,25 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Location = () => {
+type LocationProps = {
+  setUsers: any;
+};
+
+const Location = (props: LocationProps) => {
+  let location = "";
+
+  const searchByLocation = async () => {
+    const response = await fetch(
+      "https://magmutual-project.herokuapp.com/getByCountry/" + location
+    );
+    const users = await response.json();
+    props.setUsers(users);
+  };
+
+  const onTextFieldChange = (event: any) => {
+    location = event.target.value;
+  };
+
   return (
     <Stack
       direction="row"
@@ -30,6 +48,7 @@ const Location = () => {
           id="filled-basic"
           label="Search by Country"
           variant="filled"
+          onChange={onTextFieldChange}
           style={{ backgroundColor: "white" }}
         />
       </Box>
@@ -44,6 +63,7 @@ const Location = () => {
           fontSize: "20px",
           marginTop: "10px",
         }}
+        onClick={searchByLocation}
       >
         Search
       </Button>

@@ -14,6 +14,7 @@ import { PictureAsPdfOutlined } from "@mui/icons-material";
 
 function App() {
   const [users, setUsers] = useState([]);
+
   return (
     <div className="App">
       <div>
@@ -28,7 +29,10 @@ function App() {
             path="/byProfession"
             element={<Profession setUsers={setUsers} />}
           />
-          <Route path="/byLocation" element={<Location />} />
+          <Route
+            path="/byLocation"
+            element={<Location setUsers={setUsers} />}
+          />
         </Routes>
       </div>
       <div className="cardCenter">

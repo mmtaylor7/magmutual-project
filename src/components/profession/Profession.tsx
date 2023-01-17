@@ -49,7 +49,9 @@ const Profession = (props: ProfessionProps) => {
           label="Search by Profession"
           variant="filled"
           onChange={onTextFieldChange}
-          style={{ backgroundColor: "white" }}
+          style={{
+            backgroundColor: "white",
+          }}
         />
       </Box>
       <Button
