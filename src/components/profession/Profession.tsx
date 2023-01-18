@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 
 type ProfessionProps = {
   setUsers: any;
+  setSubmitClicked: (newValue: boolean) => void;
 };
 
 const Profession = (props: ProfessionProps) => {
@@ -18,6 +19,8 @@ const Profession = (props: ProfessionProps) => {
     );
     const users = await response.json();
     props.setUsers(users);
+
+    props.setSubmitClicked(true);
   };
 
   const onTextFieldChange = (event: any) => {

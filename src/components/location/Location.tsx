@@ -6,16 +6,7 @@ import TextField from "@mui/material/TextField";
 
 type LocationProps = {
   setUsers: any;
-};
-
-type EmployerUser = {
-  jobsTheyMade: Array<Job>;
-  id: string;
-};
-
-type Job = {
-  name: string;
-  salary: number;
+  setSubmitClicked: (newValue: boolean) => void;
 };
 
 const Location = (props: LocationProps) => {
@@ -27,6 +18,7 @@ const Location = (props: LocationProps) => {
     );
     const users = await response.json();
     props.setUsers(users);
+    props.setSubmitClicked(true);
   };
 
   const onTextFieldChange = (event: any) => {

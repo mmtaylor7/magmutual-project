@@ -48,11 +48,21 @@ function App() {
           <Route path="/byDate" element={<Date />} />
           <Route
             path="/byProfession"
-            element={<Profession setUsers={setUsers} />}
+            element={
+              <Profession
+                setUsers={setUsers}
+                setSubmitClicked={setSubmitClicked}
+              />
+            }
           />
           <Route
             path="/byLocation"
-            element={<Location setUsers={setUsers} />}
+            element={
+              <Location
+                setUsers={setUsers}
+                setSubmitClicked={setSubmitClicked}
+              />
+            }
           />
         </Routes>
       </div>
