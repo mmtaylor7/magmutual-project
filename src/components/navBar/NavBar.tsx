@@ -9,7 +9,10 @@ import FormLabel from "@mui/material/FormLabel";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-type NavBarProps = {};
+type NavBarProps = {
+  setSubmitClicked: (newValue: boolean) => void;
+  setUsers: any;
+};
 
 const NavBar = (props: NavBarProps) => {
   const navigate = useNavigate();
@@ -17,6 +20,8 @@ const NavBar = (props: NavBarProps) => {
     event: React.ChangeEvent<HTMLInputElement>,
     value: string
   ) => {
+    props.setSubmitClicked(false);
+    props.setUsers([]);
     switch (value) {
       case "byUser":
         navigate("/byUser");
@@ -27,6 +32,7 @@ const NavBar = (props: NavBarProps) => {
       case "byLocation":
         navigate("/byLocation");
         break;
+
       case "byProfession":
         navigate("/byProfession");
         break;

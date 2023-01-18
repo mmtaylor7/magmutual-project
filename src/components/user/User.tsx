@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 
 type UserProps = {
   setUsers: any;
+  setSubmitClicked: (newValue: boolean) => void;
 };
 
 const User = (props: UserProps) => {
@@ -18,6 +19,8 @@ const User = (props: UserProps) => {
     );
     const users = await response.json();
     props.setUsers(users);
+
+    props.setSubmitClicked(true);
   };
 
   const onTextFieldChange = (event: any) => {
