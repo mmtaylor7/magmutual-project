@@ -1,5 +1,5 @@
 import "../navBar/NavBarStyles.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -15,7 +15,16 @@ type NavBarProps = {
 };
 
 const NavBar = (props: NavBarProps) => {
+  const [radioButtonValue, setRadioButtonValue] = useState("");
+
   const navigate = useNavigate();
+
+  // run once on page load
+  useEffect(() => {
+    let radioButtonValue = window.location.pathname.substring(1);
+    setRadioButtonValue(radioButtonValue);
+  }, []);
+
   const onRadioButtonClick = (
     event: React.ChangeEvent<HTMLInputElement>,
     value: string
@@ -24,20 +33,22 @@ const NavBar = (props: NavBarProps) => {
     props.setUsers([]);
     switch (value) {
       case "byUser":
+        setRadioButtonValue("byUser");
         navigate("/byUser");
         break;
       case "byDate":
+        setRadioButtonValue("byDate");
         navigate("/byDate");
         break;
       case "byLocation":
+        setRadioButtonValue("byLocation");
         navigate("/byLocation");
         break;
 
       case "byProfession":
+        setRadioButtonValue("byProfession");
         navigate("/byProfession");
         break;
-      default:
-        console.log(`Sorry`);
     }
   };
 
@@ -51,6 +62,7 @@ const NavBar = (props: NavBarProps) => {
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
         onChange={onRadioButtonClick}
+        value={radioButtonValue}
       >
         <FormControlLabel
           value="byUser"
