@@ -45,7 +45,12 @@ function App() {
               <User setUsers={setUsers} setSubmitClicked={setSubmitClicked} />
             }
           />
-          <Route path="/byDate" element={<Date />} />
+          <Route
+            path="/byDate"
+            element={
+              <Date setUsers={setUsers} setSubmitClicked={setSubmitClicked} />
+            }
+          />
           <Route
             path="/byProfession"
             element={
